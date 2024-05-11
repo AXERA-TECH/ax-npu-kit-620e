@@ -31,12 +31,12 @@ elseif (CHIP_AX620Q)
 
     # bsp
     if(NOT BSP_MSP_DIR)
-        set(BSP_MSP_DIR ${CMAKE_SOURCE_DIR}/ax620q_bsp_sdk/msp/out/arm_glibc)
+        set(BSP_MSP_DIR ${CMAKE_SOURCE_DIR}/ax620q_bsp_sdk/msp/out/arm_uclibc)
     endif()
 
     # opencv
     if(NOT OpenCV_DIR)
-        set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/third-party/opencv/lib/arm/glibc/cmake/opencv4)
+        set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/third-party/opencv/lib/arm/uclibc/cmake/opencv4)
     endif()
 else()
     message(FATAL_ERROR "FATAL: Chip type not set!")

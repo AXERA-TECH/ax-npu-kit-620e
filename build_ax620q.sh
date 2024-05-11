@@ -1,17 +1,13 @@
 #!/bin/bash
-if [ ! -d ax620q_bsp_sdk ]; then
-  chmod +x ./download_ax_bsp.sh
-  ./download_ax_bsp.sh
-fi
+chmod +x ./download_ax_bsp.sh
+./download_ax_bsp.sh
 
-if [ ! -d third-party ]; then
-  chmod +x ./download_third_party.sh
-  ./download_third_party.sh
-fi
+chmod +x ./download_third_party.sh
+./download_third_party.sh
 
 mkdir -p build && cd build
 cmake ..  \
-  -DCMAKE_TOOLCHAIN_FILE=../toolchains/arm-linux-gnueabihf.toolchain.cmake \
+  -DCMAKE_TOOLCHAIN_FILE=../toolchains/arm-linux-uclibc-gnueabihf.toolchain.cmake \
   -DCMAKE_INSTALL_PREFIX=./install \
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_DEMO=ON  \
